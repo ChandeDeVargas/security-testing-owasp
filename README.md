@@ -41,3 +41,61 @@ pytest tests/test_sql_injection.py -v
 - [ ] Authentication (A07:2021)
 - [ ] Sensitive Data (A02:2021)
       "@ | Set-Content README.md
+
+## 📊 Running Tests with HTML Report
+
+### Generate Complete Security Report
+
+```bash
+# Windows
+run_security_tests.bat
+
+# Linux/Mac
+./run_security_tests.sh
+```
+
+This will:
+
+- Execute all 38 security tests
+- Generate timestamped HTML report
+- Save to `reports/security_report_YYYYMMDD_HHMMSS.html`
+
+### View Report
+
+The HTML report includes:
+
+- ✅ Test execution summary
+- ✅ Pass/Fail status for each test
+- ✅ Detailed failure information
+- ✅ OWASP category mapping
+- ✅ Timestamp and metadata
+- ✅ Screenshots of test execution
+
+**Open report:**
+
+```bash
+# Windows
+start reports\security_report_YYYYMMDD_HHMMSS.html
+
+# macOS
+open reports/security_report_YYYYMMDD_HHMMSS.html
+
+# Linux
+xdg-open reports/security_report_YYYYMMDD_HHMMSS.html
+```
+
+---
+
+## 📋 Test Categories in Report
+
+| Category         | Tests | OWASP    |
+| ---------------- | ----- | -------- |
+| SQL Injection    | 4     | A03:2021 |
+| XSS              | 5     | A03:2021 |
+| Security Headers | 7     | A05:2021 |
+| Authentication   | 5     | A07:2021 |
+| Access Control   | 5     | A01:2021 |
+| Sensitive Data   | 7     | A02:2021 |
+| Rate Limiting    | 5     | A04:2021 |
+
+**Total:** 38 automated security tests
